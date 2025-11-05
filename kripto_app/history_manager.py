@@ -1,12 +1,7 @@
-# history_manager.py
 from db_config import get_connection
 from rumus_crypto import des_encrypt_bytes, des_decrypt_bytes
 
 def save_history(user_id: int, activity_type: str, details: str) -> bool:
-    """
-    Menyimpan riwayat aktivitas user.
-    - details akan dienkripsi DES dan disimpan sebagai base64 text.
-    """
     conn = get_connection()
     if conn is None:
         return False

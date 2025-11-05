@@ -1,5 +1,3 @@
-# crypto_module.py
-# Semua algoritma kripto dikumpulkan di sini:
 from Crypto.Cipher import DES, AES, Blowfish
 from Crypto.Util.Padding import pad, unpad
 import hashlib, base64
@@ -15,7 +13,7 @@ def hash_sha256(password: str) -> str:
 # 2) DATABASE HISTORY: DES (mengembalikan base64)
 # -----------------------------
 # KUNCI DES harus 8 byte
-DES_KEY = b'MySecr3t'  # ganti sesuai kebutuhan (8 bytes)
+DES_KEY = b'MySecr3t' 
 
 def des_encrypt_bytes(b: bytes) -> str:
     cipher = DES.new(DES_KEY, DES.MODE_ECB)
@@ -62,8 +60,8 @@ def vigenere_decrypt(cipher: str, key: str) -> str:
 
 # AES (CBC mode) — menggunakan base64 output
 # AES_KEY harus 16/24/32 bytes; IV 16 bytes
-AES_KEY = b'16bytesAESkey!!!'  # contoh 16 bytes (ubah di produksi)
-AES_IV  = b'16bytesAESiv!!!!'  # contoh 16 bytes
+AES_KEY = b'16bytesAESkey!!!'  
+AES_IV  = b'16bytesAESiv!!!!'  
 
 def aes_encrypt_text(plain: str) -> str:
     cipher = AES.new(AES_KEY, AES.MODE_CBC, AES_IV)
@@ -145,7 +143,7 @@ def lsb_reveal(image_path: str) -> str:
     for ch in chars:
         if len(ch) < 8:
             break
-        if ch == '11111110':  # sentinel (last 8 bits of sentinel)
+        if ch == '11111110': 
             break
         message_bytes.append(int(ch, 2))
     try:

@@ -2,7 +2,6 @@ import streamlit as st
 from db_config import init_db, get_connection
 from rumus_crypto import hash_sha256
 
-# --- Fungsi Database Anda (Murni) ---
 def register_user(username: str, password: str) -> bool:
     conn = get_connection()
     if conn is None:
@@ -38,12 +37,8 @@ def check_login(username: str, password: str):
         cur.close()
         conn.close()
 
-# --- Halaman Login (Sudah Diperbaiki) ---
 def login_page():
-    
-    # st.title("🔐 Login") # DIHAPUS DARI SINI
-    init_db()  # pastikan tabel ada saat pertama kali
-    # st.write("Silakan login atau daftar akun baru.") # DIHAPUS DARI SINI
+    init_db() 
 
     menu = st.radio("Menu:", ["Login", "Register"], index=0, horizontal=True)
     
