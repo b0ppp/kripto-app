@@ -12,7 +12,7 @@ def home_page():
         st.warning("Silakan login terlebih dahulu.")
         st.stop()
 
-    st.title("Aplikasi Kriptografi (Kelompok 8)")
+    st.title("Crypton")
     st.write(f"Halo, **{st.session_state.username}** — pilih fitur di bawah.")
 
     menu = st.selectbox("Fitur:", ["Teks (Vigenere + AES)", "File (Blowfish)", "Gambar (Steganografi LSB)"])

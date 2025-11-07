@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.set_page_config(page_title="Kripto App - Kelompok 8", page_icon="🔐")
+st.set_page_config(page_title="Crypton - 115, 231", page_icon="🔐")
 
 from login_page import login_page
 from home_page import home_page
